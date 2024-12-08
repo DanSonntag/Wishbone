@@ -47,6 +47,7 @@ body {
   font-size: 16px;
   line-height: 160%;
   color: #1b1a1a;
+  transition: 0.4s ease-out;
 }
 .header__container .header-container__lists .alist__link:hover {
   text-decoration: underline;
@@ -58,6 +59,7 @@ body {
   border-radius: 14px;
   padding: 12px 24px;
   background: #1b1a1a;
+  transition: 0.2s ease-out;
 }
 .header__container .header-container__lists .black:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -412,61 +414,78 @@ body {
   line-height: 125%;
   color: #645c55;
 }
-.eighth-container .middle-part {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
 .eighth-container .middle-part .lists {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   list-style: none;
-  gap: 16px;
+  display: flex;
+  gap: 18px;
 }
-.eighth-container .middle-part .lists .list {
-  height: 456px;
-  width: 375px;
+.eighth-container .middle-part .card {
+  width: 379px;
+  height: 460px;
+  background: var(--background) no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 5rem;
+  border: 2px solid #c3c6c3;
+  transition: 0.2s ease-out;
+  overflow: visible;
 }
-.eighth-container .middle-part .lists .list .box {
+.eighth-container .middle-part .card .card-details {
+  color: black;
+  height: 100%;
+  gap: 0.5em;
   display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 250px;
+  padding-top: 2rem;
+  padding-left: 2rem;
 }
-.eighth-container .middle-part .lists .list .box:hover {
-  display: block;
+.eighth-container .middle-part .card .card-details .text-body {
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 130%;
+  color: #403e3b;
 }
-.eighth-container .middle-part .lists .list .box .top {
+.eighth-container .middle-part .card .card-details .text-title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #645c55;
+}
+.eighth-container .middle-part .card .card-button {
+  transform: translate(-50%, 125%);
+  width: 40%;
+  border: 10px;
+  background-color: #1b1a1a;
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transform: 0.2s ease-out;
+  text-align: center;
+}
+.eighth-container .middle-part .card:hover {
+  border-color: rgb(149, 112, 69);
+  box-shadow: 0 0 50px 0 rgb(149, 112, 69);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  padding: 0.01rem;
+}
+.eighth-container .middle-part .card:hover .card-details {
   display: flex;
   flex-direction: column;
-  padding: 42px 0;
-  text-align: left;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
-.eighth-container .middle-part .lists .list .box .bottom-btn {
-  padding: 12px 20px;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.03em;
-  color: #fff;
-  font-weight: 400;
-  border-radius: 14px;
-  background-color: #1b1a1a;
-  text-decoration: none;
-}
-.eighth-container .middle-part .lists .list .box:hover {
-  display: block;
-}
-.eighth-container .middle-part .lists .first {
-  background: url(./pictures/eight1.svg) no-repeat;
-}
-.eighth-container .middle-part .lists .second {
-  background: url(./pictures/eight2.svg) no-repeat;
-}
-.eighth-container .middle-part .lists .third {
-  background: url(./pictures/eight3.svg) no-repeat;
+.eighth-container .middle-part .card:hover .card-button {
+  transform: translate(-50%, -40%);
+  opacity: 1;
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  padding: 1rem;
+  border-radius: 10px;
 }
 .eighth-container .bottom-part {
   display: flex;
@@ -547,8 +566,8 @@ body {
   gap: 16px;
   text-decoration: none;
   padding: 10px;
-  border: none;
   border-radius: 16px;
+  transition: 0.5s ease-out;
 }
 .ninth-container .right-part .lists__list .link .text {
   display: flex;

@@ -60,10 +60,12 @@ body {
             font-size: 16px;
             line-height: 160%;
             color: #1b1a1a;
+            transition: .4s ease-out;
           }
 
           .alist__link:hover {
             text-decoration: underline;
+            
           }
         
         .black {
@@ -73,6 +75,7 @@ body {
          border-radius: 14px;
          padding: 12px 24px;
          background: #1b1a1a;
+         transition: .2s ease-out;
         }
         .black:hover {
             box-shadow: $box-shadow;
@@ -495,75 +498,94 @@ body {
 
   }
 
-.middle-part {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 16px;
-    
-     .lists {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+ .middle-part {
+    .lists {
         list-style: none;
-        gap: 16px;
+        display: flex;
+        gap: 18px;
+        
+    }
+    .card {
+        width: 379px;
+        height: 460px;
+        // border-radius: 10px;
+        background: var(--background) no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 5rem;
+        border: 2px solid #c3c6c3;
+        transition: .2s ease-out;
+        overflow: visible;
 
-        .list {
-            height: 456px;
-            width: 375px;
-            
-            .box {
-                display: none;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 250px;
-
-                &:hover {
-                    display: block;
-                }
-
-
-                .top {
-                    display: flex;
-                    // align-items: center;
-                    // justify-content: center;
-                    flex-direction: column;
-                    padding: 42px 0;
-                    text-align: left;
-                }
-
-                .bottom-btn {
-                    padding: 12px 20px;
-                    font-size: 16px;
-                    line-height: 150%;
-                    letter-spacing: 0.03em;
-                    color: #fff;
-                    font-weight: 400;
-                    border-radius: 14px;
-                    background-color: #1b1a1a;
-                    text-decoration: none;
-                }
+        .card-details {
+            color: black;
+            height: 100%;
+            gap: .5em;
+            display: none;
+            padding-top: 2rem;
+            padding-left: 2rem;
+    
+            .text-body {
+                font-weight: 400;
+                font-size: 23px;
+                line-height: 130%;
+                color: #403e3b;
             }
-            .box:hover {
-                display: block;
+        
+            .text-title {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 143%;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #645c55;
             }
-          
         }
+    
+        .card-button {
+            transform: translate(-50%, 125%);
+            width: 40%;
+            border: 10px;
+            background-color: #1b1a1a;
+            color: #fff;
+            font-size: 1rem;
+            // padding: .4rem .4rem;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            opacity: 0;
+            transform: .2s ease-out;
+            text-align: center;
+        }
+    }
+    
+   .card:hover {
+        border-color: rgb(149, 112, 69);
+        box-shadow: 0 0 50px 0  rgb(149, 112, 69);
+        backdrop-filter: blur(15px);
+        padding: .01rem;
 
-        .first {
-           background: url(./pictures/eight1.svg) no-repeat;
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(15px);
         }
-        .second {
-           background: url(./pictures/eight2.svg) no-repeat;
-        }
-        .third {
-           background: url(./pictures/eight3.svg) no-repeat;
-        }
-   
-     }
-     }
+    }
 
+    .card:hover .card-button {
+        transform: translate(-50%, -40%);
+        opacity: 1;
+        backdrop-filter: blur(35px);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+ }
+
+
+
+
+    
 .bottom-part {
     display: flex;
     align-items: center;
@@ -660,8 +682,9 @@ body {
             gap: 16px;
             text-decoration: none;
             padding: 10px;
-            border: none;
+            // border: 2px solid #645c55;
             border-radius: 16px;
+            transition: .5s ease-out;
 
             .text {
                 display: flex;
@@ -844,3 +867,4 @@ body {
     }
 
 }
+
